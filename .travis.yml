@@ -4,6 +4,12 @@ env:
     - GCC_VERSION="4.9"
 matrix:
   include:
+    - language: python
+      python: "2.7"
+      install:
+        - "pip install wheel"
+      script:
+        - "python setup.py sdist bdist_wheel"
     - language: cpp
       os:
       - linux

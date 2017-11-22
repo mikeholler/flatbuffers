@@ -9,6 +9,7 @@ matrix:
       install:
         - "pip install wheel"
       script:
+        - "cd python/"
         - "python setup.py sdist bdist_wheel"
     - language: cpp
       os:

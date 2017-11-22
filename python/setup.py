@@ -12,11 +12,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from os import getenv
 from setuptools import setup
+
+
+def version():
+    if 'TRAVIS_TAG' in sys.environ:
+        tag = sys.environ['TRAVIS_TAG']
+        if tag.startswith('v'):
+            return tag[1:]
+        else:
+            return tag
+    else:
+        return "unknown"
 
 setup(
     name='flatbuffers',
-    version='2015.05.14.0',
+    version=version(),
     license='Apache 2.0',
     author='FlatBuffers Contributors',
     author_email='me@rwinslow.com',

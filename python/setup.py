@@ -17,8 +17,8 @@ from setuptools import setup
 
 
 def version():
-    if 'TRAVIS_TAG' in sys.environ:
-        tag = sys.environ['TRAVIS_TAG']
+    tag = os.getenv('TRAVIS_TAG', None)
+    if tag:
         if tag.startswith('v'):
             return tag[1:]
         else:

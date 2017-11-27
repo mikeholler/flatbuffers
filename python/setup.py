@@ -42,11 +42,11 @@ def version():
     return version
 
 setup(
-    name='flatbuffers',
+    name='physiq-flatbuffers',
     version=version(),
     license='Apache 2.0',
     author='FlatBuffers Contributors',
-    author_email='me@rwinslow.com',
+    author_email='mike.holler@physiq.com',
     url='https://github.com/google/flatbuffers',
     long_description=('Python runtime library for use with the Flatbuffers'
                       'serialization format.'),

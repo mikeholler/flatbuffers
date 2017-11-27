@@ -10,16 +10,14 @@ matrix:
         - "pip install wheel"
       script:
         - "cd python/"
-        - "python setup.py sdist bdist_wheel"
+        - "VERSION='$TRAVIS_TAG' python setup.py sdist bdist_wheel"
       before_deploy:
-        - "echo '$(pwd)'"
+        - pwd
       deploy:
-        provider: pypi
-        user: testy
-        password: mctesterson
+        provider: script
+        script: .travis/deploy-python.sh
         on:
           tags: true
-        # skip_cleanup: true
 #    - language: cpp
 #      os:
 #      - linux

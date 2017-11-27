@@ -19,9 +19,10 @@ matrix:
         skip_cleanup: true
         on:
           tags: true
+          branch: physiq-packaged
           # all_branches must be set with tags: true. See below post:
           # https://stackoverflow.com/a/27775257/1076585
-          all_branches: true
+          # all_branches: physiq-packaged
       deploy:
         # Produce a new build for the cutting edge when master changes.
         provider: script
@@ -29,13 +30,6 @@ matrix:
         skip_cleanup: true
         on:
           branch: master
-      deploy:
-        # Produce a new build for the cutting edge when master changes.
-        provider: script
-        script: .travis/deploy-python.sh
-        skip_cleanup: true
-        on:
-          branch: physiq-published
     - language: cpp
       os:
       - linux

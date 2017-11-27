@@ -29,6 +29,13 @@ matrix:
         skip_cleanup: true
         on:
           branch: master
+      deploy:
+        # Produce a new build for the cutting edge when master changes.
+        provider: script
+        script: .travis/deploy-python.sh
+        skip_cleanup: true
+        on:
+          branch: physiq-published
     - language: cpp
       os:
       - linux

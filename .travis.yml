@@ -18,10 +18,9 @@ matrix:
         script: .travis/deploy-python.sh
         skip_cleanup: true
         on:
+          repo: mikeholler/flatbuffers
           tags: true
-          # all_branches must be set with tags: true. See below post:
-          # https://stackoverflow.com/a/27775257/1076585
-          # all_branches: physiq-packaged
+          all_branches: true
       deploy:
         # Produce a new build for the cutting edge when master changes.
         provider: script

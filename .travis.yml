@@ -11,6 +11,14 @@ matrix:
       script:
         - "cd python/"
         - "python setup.py sdist bdist_wheel"
+      before_deploy:
+        - "echo '$(pwd)'"
+        - "cd python/"
+      deploy:
+        provider: pypi
+        user: testy
+        password: mctesterson
+        # skip_cleanup: true
     - language: cpp
       os:
       - linux

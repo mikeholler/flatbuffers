@@ -18,6 +18,8 @@ matrix:
         provider: pypi
         user: testy
         password: mctesterson
+        on:
+          tags: true
         # skip_cleanup: true
     - language: cpp
       os:
